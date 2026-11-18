@@ -1,0 +1,27 @@
+@MiPrimeraApi_HostAddress = http://localhost:5122
+
+GET {{MiPrimeraApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{MiPrimeraApi_HostAddress}}/productos
+Content-Type: application/json
+
+{"nombre":"","precio":10,"stock":5}
+
+###
+
+GET {{MiPrimeraApi_HostAddress}}/productos
+Accept: application/json
+
+###
+
+DELETE {{MiPrimeraApi_HostAddress}}/productos/767
+
+###
+
+PUT {{MiPrimeraApi_HostAddress}}/productos/999
+Content-Type: application/json
+
+{"nombre":"Mouse","precio":1000,"stock":15}
