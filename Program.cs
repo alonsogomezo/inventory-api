@@ -83,35 +83,6 @@ app.MapPut("/productos/{id}", (int id, AppDbContext db, Producto actualProducto)
     return Results.NoContent();
 });
 
-/*List<Producto> listaProductos = new List<Producto>
-{
-    new Producto(1, "Laptop", 1500),
-    new Producto(2, "Mouse", 25)
-}; 
-
-app.MapGet("/productos", () =>
-{
-    return listaProductos;
-});
-
-app.MapPost("/productos", (Producto nuevoProducto) =>
-{
-    listaProductos.Add(nuevoProducto);
-    return nuevoProducto;
-});
-
-app.MapDelete("/productos/{id}", (int id) =>
-{
-    listaProductos.RemoveAll(prod => prod.Id == id);
-});
-
-app.MapPut("/productos/{id}", (int id, Producto actualProducto) =>
-{
-    listaProductos.RemoveAll(prod => prod.Id == id);
-    listaProductos.Add(actualProducto);
-    return actualProducto;
-}); */
-
 bool EsValido(Producto producto)
 {
     if(producto.Precio > 0 && producto.Stock >= 0 && !string.IsNullOrWhiteSpace(producto.Nombre))
@@ -127,6 +98,3 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
-
-
-//record Producto(int Id, string Nombre, double Precio);
