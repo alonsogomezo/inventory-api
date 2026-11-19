@@ -55,7 +55,7 @@ app.MapPost("/productos", (AppDbContext db, Producto nuevoProducto) =>
 
 app.MapDelete("/productos/{id}", (AppDbContext db, int id) =>
 {
-    Producto producto = db.Productos.Find(id);
+    Producto? producto = db.Productos.Find(id);
     if(producto == null)
     {
         return Results.NotFound();
@@ -67,7 +67,7 @@ app.MapDelete("/productos/{id}", (AppDbContext db, int id) =>
 
 app.MapPut("/productos/{id}", (int id, AppDbContext db, Producto actualProducto) =>
 {
-    Producto producto = db.Productos.Find(id);
+    Producto? producto = db.Productos.Find(id);
     if(producto == null)
     {
         return Results.NotFound();
